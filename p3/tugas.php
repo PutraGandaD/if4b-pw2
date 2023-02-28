@@ -63,7 +63,7 @@
                 <td>".$data['hm']."</td>
                 <td>".getAM($data['hm'])."</td>
                 <td>".$data['k']."</td>
-                <td>".getM(getAM($data['hm']))."</td>
+                <td>".getM(getAM($data['hm']), $data['k'])."</td>
             </tr>
         ";
     }
