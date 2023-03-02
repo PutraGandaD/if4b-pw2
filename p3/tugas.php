@@ -59,8 +59,11 @@
         </tr>
     ";
 
-    $total_k = 0; $total_m = 0; //variable bantu
+    $total_k = 0; $total_m = 0; $adaD = false; //variable bantu
     foreach($nilais as $data) {
+        if($data['hm'] == "D") {
+            $adaD = true;
+        }
         $total_k += $data['k']; // $total_k = $total_k + $data['k']
         $total_m += getM(getAM($data['hm']), $data['k']);
         echo "
@@ -86,7 +89,7 @@
          </tr>";
     echo "<tr>
             <td colspan='5'> Predikat Kelulusan </td>
-            <td colspan='2'>". getPredikatKelulusan(getIPK($total_m, $total_k), $nilais) . "</td>
+            <td colspan='2'>". getPredikatKelulusan(getIPK($total_m, $total_k), $adaD) . "</td>
         </tr>";
 
     echo "</table>";
