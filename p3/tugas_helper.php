@@ -17,4 +17,22 @@
     function getM($am, $k){
         return $am * $k;
     }
+
+    function getIPK($total_m, $total_k) {
+        return number_format (($total_m / $total_k), 2);
+    }
+
+    function getPredikatKelulusan($ipk) {
+        $predikat = "";
+        if ($ipk >= 2.50 && $ipk <= 2.75) {
+            $predikat = "Lulus";
+        } else if ($ipk >= 2.76 && $ipk <= 3.00) {
+            $predikat = "Memuaskan";
+        } else if ($ipk >= 3.01 && $ipk <= 3.50) {
+            $predikat = "Sangat Memuaskan";
+        } else if ($ipk >= 3.51 && $ipk <= 4.00) {
+            $predikat = "Dengan Pujian";
+        }
+        return $predikat;
+    }
 ?>

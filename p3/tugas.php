@@ -39,6 +39,11 @@
     ];
 
     echo "
+        <style>
+            td {
+                text-align: center;
+            }
+        </style>
         <table border = 1>
         <tr>
             <th rowspan = 2>No.</th>
@@ -54,7 +59,10 @@
         </tr>
     ";
 
+    $total_k = 0; $total_m = 0; //variable bantu
     foreach($nilais as $data) {
+        $total_k += $data['k']; // $total_k = $total_k + $data['k']
+        $total_m += getM(getAM($data['hm']), $data['k']);
         echo "
             <tr>
                 <td>".$data['no']."</td>
@@ -67,6 +75,20 @@
             </tr>
         ";
     }
+    echo "<tr> 
+            <td colspan='5'> JUMLAH </td> 
+            <td>" . $total_k . "</td> 
+            <td>" . $total_m . "</td> 
+          </tr>";
+    echo "<tr> 
+            <td colspan='5'> IPK </td>
+            <td colspan='2'>" . getIPK($total_m, $total_k) . "</td>
+         </tr>";
+    echo "<tr>
+            <td colspan='5'> Predikat Kelulusan </td>
+            <td colspan='2'>". getPredikatKelulusan(getIPK($total_m, $total_k)) . "</td>
+        </tr>";
+
     echo "</table>";
 
     // // echo $nilais[0]['hm'];

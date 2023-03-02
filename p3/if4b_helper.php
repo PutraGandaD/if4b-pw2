@@ -18,4 +18,8 @@
     function getProdiByNPM($npm) {
         return getProdi(substr($npm, 4, 2));
     }
+
+    function getIPK($total_m, $total_k) {
+        return number_format (($total_m / $total_k), 2);
+    }
 ?>
