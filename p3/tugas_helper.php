@@ -24,14 +24,26 @@
 
     function getPredikatKelulusan($ipk) {
         $predikat = "";
-        if ($ipk >= 2.50 && $ipk <= 2.75) {
-            $predikat = "Lulus";
-        } else if ($ipk >= 2.76 && $ipk <= 3.00) {
-            $predikat = "Memuaskan";
-        } else if ($ipk >= 3.01 && $ipk <= 3.50) {
-            $predikat = "Sangat Memuaskan";
-        } else if ($ipk >= 3.51 && $ipk <= 4.00) {
+        // if ($ipk >= 2.50 && $ipk <= 2.75) {
+        //     $predikat = "Lulus";
+        // } else if ($ipk >= 2.76 && $ipk <= 3.00) {
+        //     $predikat = "Memuaskan";
+        // } else if ($ipk >= 3.01 && $ipk <= 3.50) {
+        //     $predikat = "Sangat Memuaskan";
+        // } else if ($ipk >= 3.51 && $ipk <= 4.00) {
+        //     $predikat = "Dengan Pujian";
+        // }
+
+        if ($ipk >= 3.51) {
             $predikat = "Dengan Pujian";
+        } else if ($ipk >= 3.01) {
+            $predikat = "Sangat Memuaskan";
+        } else if ($ipk >= 2.76) {
+            $predikat = "Memuaskan";
+        } else if ($ipk >= 2.50) {
+            $predikat = "Lulus";
+        } else {
+            $predikat = "-";
         }
         return $predikat;
     }
