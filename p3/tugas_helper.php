@@ -22,7 +22,13 @@
         return number_format (($total_m / $total_k), 2);
     }
 
-    function getPredikatKelulusan($ipk) {
+    function getPredikatKelulusan($ipk, $arraynilai) {
+        $adaD = false;
+        foreach($arraynilai as $data) {
+            if($data['hm'] == "D") {
+                $adaD = true;
+            }
+        }
         $predikat = "";
         // if ($ipk >= 2.50 && $ipk <= 2.75) {
         //     $predikat = "Lulus";
@@ -35,7 +41,11 @@
         // }
 
         if ($ipk >= 3.51) {
-            $predikat = "Dengan Pujian";
+            if($adaD == true) {
+                $predikat = "Sangat Memuaskan";
+            } else {
+                $predikat = "Dengan Pujian";
+            }
         } else if ($ipk >= 3.01) {
             $predikat = "Sangat Memuaskan";
         } else if ($ipk >= 2.76) {

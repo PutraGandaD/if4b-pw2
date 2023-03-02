@@ -5,7 +5,7 @@
             "no" => 1,
             "nama_mk" => "Algoritm Dan Struktur Data II",
             "kode_mk" => "IF0017",
-            "hm" => "A-", 
+            "hm" => "A", 
             "k" => "3",
         ],
         [
@@ -19,14 +19,14 @@
             "no" => 3,
             "nama_mk" => "Kalkulus II",
             "kode_mk" => "I1212",
-            "hm" => "B-", 
+            "hm" => "A", 
             "k" => "4",
         ],
         [
             "no" => 4,
             "nama_mk" => "Logika Informatika",
             "kode_mk" => "I1108",
-            "hm" => "A", 
+            "hm" => "D", 
             "k" => "2",
         ],
         [
@@ -86,7 +86,7 @@
          </tr>";
     echo "<tr>
             <td colspan='5'> Predikat Kelulusan </td>
-            <td colspan='2'>". getPredikatKelulusan(getIPK($total_m, $total_k)) . "</td>
+            <td colspan='2'>". getPredikatKelulusan(getIPK($total_m, $total_k), $nilais) . "</td>
         </tr>";
 
     echo "</table>";
