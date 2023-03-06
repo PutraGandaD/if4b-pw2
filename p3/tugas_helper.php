@@ -56,6 +56,8 @@
             } else {
                 $yudisium = "Bisa Yudisium";
             }
+        } else {
+            $yudisium = "Tidak Bisa Yudisium";
         }
         return $yudisium;
     }

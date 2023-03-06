@@ -5,14 +5,14 @@
             "no" => 1,
             "nama_mk" => "Algoritm Dan Struktur Data II",
             "kode_mk" => "IF0017",
-            "hm" => "B",
+            "hm" => "D",
             "k" => "3",
         ],
         [
             "no" => 2,
             "nama_mk" => "Jaringan Komputer",
             "kode_mk" => "IF0029",
-            "hm" => "A", 
+            "hm" => "B", 
             "k" => "3",
         ],
         [
