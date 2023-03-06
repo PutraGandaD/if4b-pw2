@@ -41,4 +41,72 @@
         }
         return $predikat;
     }
+
+    function getSyaratYudisium($ipk, $adaE = false, $nilai_ta = true, $total_d) {
+        $yudisium = "";
+        if ($ipk >= 2.50) {
+            if($adaE == true && $nilai_ta == false && $total_d > 8) {
+                $yudisium = "Tidak Bisa Yudisium";
+            } else if($adaE == true && $nilai_ta == false && $total_d <= 8) {
+                $yudisium = "Tidak Bisa Yudisium";
+            } else if ($adaE == false && $nilai_ta == false && $total_d > 8) {
+                $yudisium = "Tidak Bisa Yudisium";
+            } else if ($adaE == false && $nilai_ta == false && $total_d <= 8) {
+                $yudisium = "Tidak Bisa Yudisium";
+            } else if ($adaE == false && $nilai_ta == false && $total_d > 8) {
+                $yudisium = "Tidak Bisa Yudisium";
+            } else if ($adaE == false && $nilai_ta == false && $total_d <= 8) {
+                $yudisium = "Tidak Bisa Yudisium";
+            } else if ($adaE == true && $nilai_ta == true && $total_d > 8) {
+                $yudisium = "Tidak Bisa Yudisium";
+            } else if ($adaE == true && $nilai_ta == true && $total_d <= 8) {
+                $yudisium = "Tidak Bisa Yudisium";
+            } else {
+                $yudisium = "Bisa Yudisium";
+            }
+        } else if ($ipk < 2.50) {
+            $yudisium = "Tidak Bisa Yudisium";
+        }
+        return $yudisium;
+    }
+
+    function getNilaiTA($nilai_ta) {
+        $nilaiTA = "";
+        if ($nilai_ta == true) {
+            $nilaiTA = "Memenuhi";
+        } else {
+            $nilaiTA = "Tidak Memenuhi";
+        }
+        return $nilaiTA;
+    }
+    
+    function getIPKYudisium($ipk) {
+        $ipkYudisium = "";
+        if ($ipk >= 2.50) {
+            $ipkYudisium = "Memenuhi";
+        } else {
+            $ipkYudisium = "Tidak Memenuhi";
+        }
+        return $ipkYudisium;
+    }
+
+    function getAdaE($adaE) {
+        $adaNilaiE = "";
+        if ($adaE == true) {
+            $adaNilaiE = "Memenuhi";
+        } else {
+            $adaNilaiE = "Tidak Memenuhi";
+        }
+        return $adaNilaiE;
+    }
+
+    function getSKSNilaiD($total_d) {
+        $sksD = "";
+        if ($total_d > 8) {
+            $sksD = "Tidak Memenuhi";
+        } else {
+            $sksD = "Memenuhi";
+        }
+        return $sksD;
+    }
 ?>
