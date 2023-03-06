@@ -12,7 +12,7 @@
             "no" => 2,
             "nama_mk" => "Jaringan Komputer",
             "kode_mk" => "IF0029",
-            "hm" => "D", 
+            "hm" => "A", 
             "k" => "3",
         ],
         [
