@@ -5,7 +5,7 @@
             "no" => 1,
             "nama_mk" => "Algoritm Dan Struktur Data II",
             "kode_mk" => "IF0017",
-            "hm" => "B", 
+            "hm" => "B",
             "k" => "3",
         ],
         [
