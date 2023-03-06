@@ -93,9 +93,9 @@
     function getAdaE($adaE) {
         $adaNilaiE = "";
         if ($adaE == true) {
-            $adaNilaiE = "Memenuhi";
-        } else {
             $adaNilaiE = "Tidak Memenuhi";
+        } else {
+            $adaNilaiE = "Memenuhi";
         }
         return $adaNilaiE;
     }
