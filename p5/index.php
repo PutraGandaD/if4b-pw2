@@ -45,9 +45,9 @@
                     <label>Kota Lahir</label>
                     <select class="form-select mb-3" name = "kota_lahir">
                         <option selected>Pilih Kota Lahir</option>
-                        <option value="PLM">Palembang</option>
-                        <option value="JKT">Jakarta</option>
-                        <option value="BTH">Batam</option>
+                        <option value="Palembang">Palembang</option>
+                        <option value="Jakarta">Jakarta</option>
+                        <option value="Batam">Batam</option>
                     </select>
 
                     <!-- Tanggal Lahir-->
@@ -63,7 +63,7 @@
                     </div>
 
                     <!-- Submit Button-->
-                    <Button type = "submit" class="btn btn-primary">Daftar</button>
+                    <Button type = "submit" id="daftar" class="btn btn-primary">Daftar</button>
                 </form>
             </div>  
         </div>
