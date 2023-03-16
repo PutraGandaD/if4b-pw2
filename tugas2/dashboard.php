@@ -42,7 +42,7 @@ session_start();
         <?php 
            if(isset($_SESSION['nama']))
            {
-               echo $_SESSION['nama']." ".$_SESSION['username'];
+               echo $_SESSION['nama']." (".$_SESSION['username'].")";
            }
         ?>
     </h2>
