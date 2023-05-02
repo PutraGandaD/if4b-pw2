@@ -1,13 +1,13 @@
 <?php
-session_start();
-if(isset($_POST['logout'])){
-    session_unset();
-    $_SESSION['sukses'] = 'Sampai berjumpa kembali :)';
-    header('Location: login.php');
-}
-if(isset($_POST['cancel'])){
-    header('Location: dashboard.php');
-}
+    session_start();
+    if(isset($_POST['logout'])){
+        session_unset();
+        $_SESSION['sukses'] = 'Sampai berjumpa kembali :)';
+        header('Location: login.php');
+    }
+    if(isset($_POST['cancel'])){
+        header('Location: dashboard.php');
+    }
 ?>
 
  <!DOCTYPE html>

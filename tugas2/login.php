@@ -32,8 +32,6 @@
                             unset($_SESSION['sukses']);
                         }
                         ?>
-
-                       
                         <form action="proses.php" method="POST">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInput" name="username">
