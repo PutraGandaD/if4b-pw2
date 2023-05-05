@@ -39,8 +39,8 @@ Route::get('/dosen/index', function() {
 //     // return view('fakultas', ['fikr' => 'Fakultas Ilmu Komputer dan Rekayasa']);
 
 
-Route::get('/prodi', [ProdiController::class, 'index']) -> name('prodi');
-
+// Route::get('/prodi', [ProdiController::class, 'index']) -> name('prodi');
+Route::resource('prodi', ProdiController::class);
 Route::resource('fakultas', FakultasController::class);
 
 
