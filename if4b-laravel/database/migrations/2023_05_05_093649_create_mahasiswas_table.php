@@ -12,7 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('mahasiswas', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id');
+            $table->char('npm', 10)->unique();
+            $table->string('nama');
+            $table->date('tanggal_lahir');
+            $table->string('kota_lahir');
+            $table->string('foto');
+            $table->uuid('prodi_id');
+            $table->foreign('prodi_id')->references('id')
+            ->on('prodi')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }
