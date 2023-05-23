@@ -76,7 +76,8 @@ class MahasiswaController extends Controller
      */
     public function edit(Mahasiswa $mahasiswa)
     {
-        //
+        $prodi = Prodi::orderBy('nama_prodi', 'ASC')->get();
+        return view('mahasiswa.edit') -> with('mahasiswa', $mahasiswa) -> with('prodi', $prodi);
     }
 
     /**
@@ -84,7 +85,28 @@ class MahasiswaController extends Controller
      */
     public function update(Request $request, Mahasiswa $mahasiswa)
     {
-        //
+                // validasi data
+                $validasi = $request->validate([
+                    'nama' => 'required',
+                    'tanggal_lahir' => 'required',
+                    'kota_lahir' => 'required',
+                    'foto' => 'required|file|image|max:5000',
+                    'prodi_id' => 'required'
+                ]);
+
+                $ext = $request->foto->getClientOriginalExtension();
+                $new_filename =  $mahasiswa ->npm . "." . $ext;
+                $request->foto->storeAs('public', $new_filename);
+
+                $mahasiswa ->npm = $mahasiswa ->npm;
+                $mahasiswa ->nama = $validasi['nama'];
+                $mahasiswa ->tanggal_lahir = $validasi['tanggal_lahir'];
+                $mahasiswa ->kota_lahir = $validasi['kota_lahir'];
+                $mahasiswa ->foto = $new_filename;
+                $mahasiswa ->prodi_id = $validasi['prodi_id'];
+
+                $mahasiswa->save(); // save
+                return redirect()->route('mahasiswa.index')->with('success', "Data mahasiswa ".$validasi['nama']." berhasil disimpan");
     }
 
     /**
@@ -92,6 +114,15 @@ class MahasiswaController extends Controller
      */
     public function destroy(Mahasiswa $mahasiswa)
     {
-        //
+        //dd($mahasiswa);
+        $mahasiswa -> delete();
+        // return redirect()->route('mahasiswa.index')->with('success', 'Data berhasil dihapus');
+        return response("Data deleted successfully.", 200);
+    }
+
+    public function multiDelete(Request $request)
+    {
+        Mahasiswa::whereIn('id', $request->get('selected'))->delete();
+        return response("Selected post(s) deleted successfully.", 200);
     }
 }

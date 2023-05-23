@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\FakultasController;
 use App\Http\Controllers\MahasiswaController;
+use App\Models\Mahasiswa;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,7 @@ Route::get('/dosen/index', function() {
 Route::resource('prodi', ProdiController::class);
 Route::resource('fakultas', FakultasController::class);
 Route::resource('mahasiswa', MahasiswaController::class);
+Route::post('mhs-multi-delete', [MahasiswaController::class, 'multiDelete'])->name('mhs-multi-delete');
 
 
 
