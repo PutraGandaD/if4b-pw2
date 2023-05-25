@@ -12,13 +12,20 @@
                             {{ Session::get('success') }}
                         </div>
                     @endif
-                    <h4 class="card-title">Mahasiswa</h4>
-                    <a href="{{ route('mahasiswa.create') }}" class="btn btn-primary">Tambah</a>
 
-                    @if (count($mahasiswas) != 0)
-                        <button class="btn btn-danger" id="multi-delete" data-route="{{ route('mhs-multi-delete') }}">Delete
-                            All Selected</button>
-                    @endif
+                    <h4 class="card-title">Mahasiswa</h4>
+                    <div class="d-flex justify-content-between">
+                        <form class="col-lg-6 rounded border-info border d-flex" method="GET">
+                            <input type="text" name="search" class="form-control" placeholder="">
+                        </form>
+                        <div>
+                            <a href="{{ route('mahasiswa.create') }}" class="btn btn-primary">Tambah</a>
+                            @if (count($mahasiswas) != 0)
+                                <button class="btn btn-danger" id="multi-delete" data-route="{{ route('mhs-multi-delete') }}">Delete
+                                    All Selected</button>
+                            @endif
+                        </div>
+                    </div>
 
                     <div class="table-responsive">
                         <table class="table table-striped table-hover" id="posts-table">
@@ -64,6 +71,9 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <div class="mt-4">
+                            {{$mahasiswas -> withQueryString()->links('pagination::bootstrap-5')}}
+                        </div>
                     </div>
                 </div>
             </div>
