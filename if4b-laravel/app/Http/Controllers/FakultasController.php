@@ -30,6 +30,7 @@ class FakultasController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Fakultas::class);
         // dd($request);
         // dd($request->nama_dekan);
 
