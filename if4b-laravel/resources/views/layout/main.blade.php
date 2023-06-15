@@ -64,6 +64,19 @@
               {{-- <div class="badge badge-info badge-pill">2</div> --}}
             </a>
           </li>
+
+          <li class="nav-item">
+          <!-- Authentication -->
+          <form method="POST" action="{{ route('logout') }}">
+          @csrf
+            <a class="nav-link" :href="route('logout')"
+                onclick="event.preventDefault();
+                    this.closest('form').submit();">
+                <i class="mdi mdi-view-module menu-icon"></i>
+                {{ __('Log Out') }}
+            </a>
+          </form>
+
         <li class="nav-item sidebar-category">
           <p>Components</p>
           <span></span>
